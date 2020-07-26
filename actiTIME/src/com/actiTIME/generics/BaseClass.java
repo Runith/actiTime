@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import com.actiTIME.pom.LoginPage;
+import com.actiTIME.pom.TimetrackPage;
 
 public class BaseClass {
 	static {
@@ -29,7 +30,8 @@ public class BaseClass {
 	}
 	
 	@AfterTest
-	public void closeBrowser() {
+	public void closeBrowser() throws InterruptedException {
+	Thread.sleep(2000);
 	driver.close();
 	}
 	
@@ -44,7 +46,11 @@ public class BaseClass {
 	}
     
     @AfterMethod
-    public void logout() {
+    public void logout() throws InterruptedException {
+    	TimetrackPage t=new TimetrackPage(driver);
+    	Thread.sleep(2000);
+    	t.clickLogout();
+    	
     	
     
 	}

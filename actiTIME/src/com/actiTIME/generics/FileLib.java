@@ -19,17 +19,17 @@ public class FileLib {
 		}
 			
 		public String getExceldata(String Sheetname, int row, int cell) throws EncryptedDocumentException, IOException {
-			FileInputStream fis=new FileInputStream("./data/Book1.xlsx");
+			FileInputStream fis=new FileInputStream("./data/TestScript.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
 			String data = wb.getSheet(Sheetname).getRow(row).getCell(cell).toString();
 			return data;
 		}
 		
 		public void setExcelData(String Sheetname, int row, int cell, String setValue) throws EncryptedDocumentException, IOException {
-			FileInputStream fis = new FileInputStream("./data/Book1.xlsx");
+			FileInputStream fis = new FileInputStream("./data/TestScript.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
 			wb.getSheet(Sheetname).getRow(row).getCell(cell).setCellValue(setValue);
-			FileOutputStream fos = new FileOutputStream("./data/Book1.xlsx");
+			FileOutputStream fos = new FileOutputStream("TestScript.xlsx");
 			wb.write(fos);
 			wb.close();
 		}
