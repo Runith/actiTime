@@ -36,7 +36,7 @@ public class BaseClass {
 	}
 	
 	@BeforeMethod
-	public void login() throws IOException {
+	public void login() throws IOException, InterruptedException{
 	String url = f.getPropertyData("url");
     String usn = f.getPropertyData("usn");
     String pwd = f.getPropertyData("pwd");
@@ -47,9 +47,8 @@ public class BaseClass {
     
     @AfterMethod
     public void logout() throws InterruptedException {
-    	TimetrackPage t=new TimetrackPage(driver);
-    	Thread.sleep(2000);
-    	t.clickLogout();
+    	TimetrackPage tt=new TimetrackPage(driver);
+    	tt.clickLogout();
     	
     	
     

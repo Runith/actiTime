@@ -36,8 +36,29 @@ public class TasksListPage {
 	@FindBy(id="container_tt")
 	private WebElement Timetracktab;
 	
+	@FindBy(xpath="//div[@class='item createNewTasks']")
+	private WebElement NewTasksBtn;
+	
+	@FindBy(xpath="(//div[@class='dropdownButton'])[15]")
+	private WebElement SelectCustomeropt;
+	
+	@FindBy(xpath="//div[text()='- New Customer -']")
+	private WebElement NewCustomerBtn2;
+	
+	@FindBy(xpath="(//input[@placeholder='Enter Customer Name'])[2]")
+	private WebElement CustomerNametbx2;
+	
+	@FindBy(xpath="(//input[@placeholder='Enter Project Name'])[2]")
+	private WebElement ProjectNametbx;
+	
+	@FindBy(xpath="(//input[@class='inputFieldWithPlaceholder'])[1]")
+	private WebElement TaskNameTbx;
+	
+	@FindBy(xpath="//div[text()='Create Tasks']")
+	private WebElement CreateTasksBtn;
 	
 
+	
 	public TasksListPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		
@@ -102,6 +123,50 @@ public class TasksListPage {
 	public WebElement getTimetracktab() {
 		return Timetracktab;
 	}
+	
+	
+	public WebElement getNewTasksBtn() {
+		return NewTasksBtn;
+	}
+
+
+
+	public WebElement getSelectCustomeropt() {
+		return SelectCustomeropt;
+	}
+
+
+
+	public WebElement getNewCustomerBtn2() {
+		return NewCustomerBtn2;
+	}
+
+
+
+	public WebElement getCustomerNametbx2() {
+		return CustomerNametbx2;
+	}
+
+
+
+	public WebElement getProjectNametbx() {
+		return ProjectNametbx;
+	}
+
+
+
+	public WebElement getTaskNameTbx() {
+		return TaskNameTbx;
+	}
+
+
+
+	public WebElement getCreateTasksBtn() {
+		return CreateTasksBtn;
+	}
+
+
+
 
 
 }

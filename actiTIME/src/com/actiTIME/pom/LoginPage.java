@@ -22,8 +22,9 @@ public class LoginPage {
 	PageFactory.initElements(driver, this);		
 	}
 	
-	public void setlogin(String usn, String pwd) {
+	public void setlogin(String usn, String pwd) throws InterruptedException {
 		usntbx.sendKeys(usn);
+		Thread.sleep(1000);
 		pwdtbx.sendKeys(pwd);
 		loginbtn.click();
 	}
